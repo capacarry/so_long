@@ -6,13 +6,13 @@
 /*   By: gcapa-pe <gcapa-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 12:01:33 by gcapa-pe          #+#    #+#             */
-/*   Updated: 2023/05/10 16:36:16 by gcapa-pe         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:29:40 by gcapa-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strchr(char *s, int c)
+char	*get_strchr(char *s, int c)
 {
 	int	i;
 
@@ -20,7 +20,7 @@ char	*ft_strchr(char *s, int c)
 		return (NULL);
 	if (c == 0)
 	{
-		i = ft_strlen((char *)s);
+		i = get_strlen((char *)s);
 		return (&s[i]);
 	}
 	i = 0;
@@ -35,7 +35,7 @@ char	*ft_strchr(char *s, int c)
 
 char	*ft_sub_divide(char *s, char *sub_s, int start, int len)
 {
-	if (start > ft_strlen(s))
+	if (start > get_strlen(s))
 	{
 		sub_s = malloc(sizeof(char));
 		if (!sub_s)
@@ -43,8 +43,8 @@ char	*ft_sub_divide(char *s, char *sub_s, int start, int len)
 		sub_s[0] = '\0';
 		return (sub_s);
 	}
-	else if (len >= ft_strlen(s))
-		sub_s = malloc(ft_strlen(s) - start + 1);
+	else if (len >= get_strlen(s))
+		sub_s = malloc(get_strlen(s) - start + 1);
 	else
 		sub_s = malloc(len + 1);
 	if (!sub_s)
@@ -52,7 +52,7 @@ char	*ft_sub_divide(char *s, char *sub_s, int start, int len)
 	return (sub_s);
 }
 
-char	*ft_substr(char *s, int start, int len, int do_free)
+char	*get_substr(char *s, int start, int len, int do_free)
 {
 	char	*sub_s;
 	int		i;
@@ -73,14 +73,14 @@ char	*ft_substr(char *s, int start, int len, int do_free)
 	return (sub_s);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*get_strjoin(char *s1, char *s2)
 {
 	char	*conc;
 	int		i;
 	int		j;
 
 	i = 0;
-	conc = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	conc = (char *)malloc(get_strlen(s1) + get_strlen(s2) + 1);
 	if (!conc)
 		return (NULL);
 	if (s1)
@@ -99,7 +99,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (conc);
 }
 
-int	ft_strlen(char *s)
+int	get_strlen(char *s)
 {
 	int	i;
 

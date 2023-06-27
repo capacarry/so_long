@@ -6,7 +6,7 @@
 /*   By: gcapa-pe <gcapa-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 12:01:12 by gcapa-pe          #+#    #+#             */
-/*   Updated: 2023/05/12 13:03:44 by gcapa-pe         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:29:04 by gcapa-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*get_dick(char *content)
 	char	*line;
 
 	i = 0;
-	if (!ft_strlen(content))
+	if (!get_strlen(content))
 	{
 		if (content)
 			free(content);
@@ -30,7 +30,7 @@ char	*get_dick(char *content)
 	}
 	if (content[i] == '\0')
 		i--;
-	line = ft_substr(content, 0, i + 1, 0);
+	line = get_substr(content, 0, i + 1, 0);
 	return (line);
 }
 
@@ -43,7 +43,7 @@ char	*r_file(int fd, char *content)
 	if (!tmp)
 		return (NULL);
 	line_s = 1;
-	while (!ft_strchr(content, '\n') && line_s)
+	while (!get_strchr(content, '\n') && line_s)
 	{
 		line_s = read(fd, tmp, BUFFER_SIZE);
 		if (line_s < 0)
@@ -53,7 +53,7 @@ char	*r_file(int fd, char *content)
 			return (NULL);
 		}
 		tmp[line_s] = '\0';
-		content = ft_strjoin(content, tmp);
+		content = get_strjoin(content, tmp);
 	}
 	free(tmp);
 	return (content);
@@ -77,9 +77,9 @@ char	*get_next_line(int fd)
 		content = NULL;
 		return (NULL);
 	}
-	line_len = ft_strlen(line);
-	content_len = ft_strlen(content);
-	content = ft_substr(content, line_len, content_len - line_len, 1);
+	line_len = get_strlen(line);
+	content_len = get_strlen(content);
+	content = get_substr(content, line_len, content_len - line_len, 1);
 	return (line);
 }
 

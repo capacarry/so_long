@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   remove_break.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcapa-pe <gcapa-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 13:45:14 by gcapa-pe          #+#    #+#             */
-/*   Updated: 2023/06/12 15:37:58 by gcapa-pe         ###   ########.fr       */
+/*   Created: 2023/06/13 17:32:26 by gcapa-pe          #+#    #+#             */
+/*   Updated: 2023/06/13 17:50:37 by gcapa-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
-int	ft_strlen(const char *s)
+void delete_break (t_so_long *content)
 {
-	int	i;
-
+	int i;
+	int j;
+	
 	i = 0;
-	while (s[i] != '\0')
-	{
+	while(content->map[i] != NULL)
+	{	
+		j = 0;
+		while(content->map[i][j] != '\0')
+		{
+			if(content->map[i][j] == '\n')
+				content->map[i][j] = '\0';
+			j++;
+		}
 		i++;
 	}
-	return (i);
 }
-
-// int main()
-// {
-//     printf("%zu\n",ft_strlen("abcd"));
-//     return(0);
-// }

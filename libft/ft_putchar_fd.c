@@ -6,13 +6,13 @@
 /*   By: gcapa-pe <gcapa-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:22:48 by gcapa-pe          #+#    #+#             */
-/*   Updated: 2023/04/20 17:26:29 by gcapa-pe         ###   ########.fr       */
+/*   Updated: 2023/06/23 16:06:56 by gcapa-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c)
 {
-	write(fd, &c, 1);
+	write(1, &c, 1);
 }
