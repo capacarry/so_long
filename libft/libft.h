@@ -6,7 +6,7 @@
 /*   By: gcapa-pe <gcapa-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 15:51:04 by gcapa-pe          #+#    #+#             */
-/*   Updated: 2023/06/23 16:07:20 by gcapa-pe         ###   ########.fr       */
+/*   Updated: 2023/06/28 16:21:03 by gcapa-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int					ft_isalnum(int c);
 int					ft_isdigit(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
-int				ft_strlen(const char *s);
+int					ft_strlen(const char *s);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memset(void *s, int c, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);

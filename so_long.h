@@ -6,7 +6,7 @@
 /*   By: gcapa-pe <gcapa-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:29:43 by gcapa-pe          #+#    #+#             */
-/*   Updated: 2023/06/27 16:10:23 by gcapa-pe         ###   ########.fr       */
+/*   Updated: 2023/06/28 20:41:57 by gcapa-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,13 @@ typedef struct s_vars
 }			t_vars;
 
 typedef struct so_long
-{	
-	char 	*str_actions;
+{
+	char	*str_actions;
+	int		single_start;
+	int		single_exit;
+	int		count_tmp;
 	int		map_fd;
-	void 	*actions_img;
+	void	*actions_img;
 	int		nb_actions;
 	int		rows;
 	int		found_exit;
@@ -73,6 +76,14 @@ void		free_mlx_stuff(t_so_long *content);
 void		player_loop(t_so_long *content);
 void		enemy_loop(t_so_long *content);
 void		wall_loop(t_so_long *content);
-int close_window(t_so_long *content);
-
+int			close_window(t_so_long *content);
+int			check_walls(t_so_long *content);
+int			check_walls_2(t_so_long *content, int i, int j);
+int			check_elements_2(t_so_long *content, int i, int j);
+void		initialize_map(t_so_long *content, int i, char *argv[]);
+int			actions_2(t_so_long *content, int tmp[]);
+int			actions_3(t_so_long *content, int tmp[]);
+void		keys(int key_code, t_so_long *content);
+void		images_to_array_2(t_so_long *content, char element);
+void		image_to_window(t_so_long *content, int x, int y);
 #endif

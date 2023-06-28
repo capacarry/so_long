@@ -6,7 +6,7 @@
 /*   By: gcapa-pe <gcapa-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 12:15:36 by gcapa-pe          #+#    #+#             */
-/*   Updated: 2023/06/12 16:31:39 by gcapa-pe         ###   ########.fr       */
+/*   Updated: 2023/06/28 16:21:29 by gcapa-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_substr(char const *s, int start, int len)
 {
 	char	*sub_s;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;

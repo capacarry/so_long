@@ -4,7 +4,7 @@ CC = cc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -g
 OBJS = $(SRC:.c=.o)
-SRC = so_long.c check_path.c check_and_handle.c free_everything.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c remove_break.c element_frames.c close_window.c
+SRC = so_long.c check_path.c check_and_handle.c free_everything.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c remove_break.c element_frames.c close_window.c helper.c helper_2.c
 LIBFT = ./libft/libft.a
 MLX = minilibx-linux/libmlx.a
 MLX_FLAGS = -lm -lX11 -lXext
